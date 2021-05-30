@@ -1,4 +1,11 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import 'virtual:windi.css';
 
-createApp(App).mount('#app');
+import app from './app';
+import VueSnip from 'vue-snip';
+
+import router from './routes';
+
+app.use(VueSnip);
+app.use(router);
+
+app.mount('#app');

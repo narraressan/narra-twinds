@@ -1,0 +1,104 @@
+@import './fonts.scss';
+
+// VARIABLES
+$stream_activities__height: 350px;
+// ------------------------------
+
+.ntwinds {
+    &__page {
+        @apply bg-white;
+    }
+    
+    // LAYOUT
+    &__compress_layout {
+        @apply mx-auto;
+        max-width: 1100px;
+    }
+
+    &__wide_layout {
+        @apply mx-auto;
+        max-width: 1600px;
+    }
+
+    &__full_layout {
+        @apply mx-auto;
+        max-width: 100%;
+    }
+    // ------------------------------
+
+    // COMPONENTS
+    &__sidebar {
+        @apply flex-none;
+        width: 250px;
+
+        &__container {
+            @apply fixed overflow-y-auto;
+            width: inherit;
+            height: calc(100vh - 4rem); // h-16 == 4rem from tailwind config
+        }
+    }
+
+    &__adbar {
+        @apply flex-none;
+        width: 200px;
+    }
+
+    &__livestream {
+        @apply flex flex-col md:flex-row h-full;
+
+        &__player {
+            @apply flex-grow bg-black text-white;
+            min-height: $stream_activities__height;
+        }
+        
+        &__activities {
+            @apply overflow-y-auto;
+            height: calc(100vh - #{$stream_activities__height});
+
+            @media (min-width: 768px) {
+                @apply flex-none h-full;
+                width: 350px;
+            }
+            
+            @media (min-width: 1024px) {
+                width: 400px;
+            }
+
+            @media (min-width: 1920px) {
+                width: 600px;
+            }
+        }
+    }
+    // ------------------------------
+
+    // UTILITIES
+    &__transition {
+        /* Enter and leave animations can use different */
+        /* durations and timing functions.              */
+        &__slidedown-leave-active,
+        &__slidedown-enter-active {
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        &__slidedown-enter-to,
+        &__slidedown-leave-from {
+        // TODO: this large height causes some delay illusion when closing the menu
+        max-height: 800px;
+        }
+        
+        &__slidedown-enter-from,
+        &__slidedown-leave-to {
+            overflow: hidden;
+            max-height: 0;
+        }
+    }
+    // ------------------------------
+}
+
+// util classes to be deleted later
+.placeholder {
+    @apply bg-gray-100 p-5;
+    width: 100%;
+    min-height: 32px;
+}
