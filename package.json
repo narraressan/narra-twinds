@@ -1,0 +1,41 @@
+{
+  "name": "narra-twinds",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --config vite.config.js -- NODE_OPTIONS=--max-old-space-size=4096",
+    "build": "vite build",
+    "serve": "vite preview",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint --ext .js,.vue src --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^4.4.0",
+    "@headlessui/vue": "^1.2.0",
+    "@heroicons/vue": "^1.0.1",
+    "animate.css": "^4.1.1",
+    "vue": "^3.0.5",
+    "vue-router": "4",
+    "vue-snip": "^1.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^7.9.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "sass": "^1.34.0",
+    "vite": "^2.1.5",
+    "vite-plugin-windicss": "^0.16.7",
+    "windicss": "^3.0.12"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.{js,vue}": [
+      "yarn format",
+      "yarn lint"
+    ]
+  }
+}
