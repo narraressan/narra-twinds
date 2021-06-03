@@ -14,6 +14,7 @@
     "@headlessui/vue": "^1.2.0",
     "@heroicons/vue": "^1.0.1",
     "animate.css": "^4.1.1",
+    "dummyjs": "^1.1.7",
     "vue": "^3.0.5",
     "vue-router": "4",
     "vue-snip": "^1.2.0"

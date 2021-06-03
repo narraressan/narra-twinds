@@ -6,6 +6,7 @@ import WideLayout from '../layouts/WideLayout.vue';
 
 import NavHeaders from '../component-pages/NavHeaders.vue';
 import Typography from '../component-pages/Typography.vue';
+import Buttons from '../component-pages/Buttons.vue';
 
 import SocmedHomepage from '../pages/SocmedHomePage.vue';
 import LiveStream from '../pages/LiveStreamPage.vue';
@@ -43,6 +44,11 @@ export default [
         path: '/typography',
         name: 'Typography',
         component: Typography,
+    },
+    {
+        path: '/buttons',
+        name: 'Buttons',
+        component: Buttons,
     },
     {
         path: '/socmed-home',

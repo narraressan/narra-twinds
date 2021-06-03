@@ -1,5 +1,5 @@
 <template>
-    <Disclosure v-slot="{ open }" as="nav">
+    <Disclosure v-slot="{ open }" as="nav" class="z-10">
         <div :class="container" class="px-5 xl:px-0">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">

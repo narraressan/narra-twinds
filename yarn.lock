@@ -498,6 +498,11 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dummyjs@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/dummyjs/-/dummyjs-1.1.7.tgz#b6bd325847b4e04390c4e25a8516dd642760c9a4"
+  integrity sha512-LLbsaDZN7biLCmBf4rtMKkjQU9poMzkm01UQYoDxosFohtco9tT/bvhU4Juq+gODd7gpXsTDq1DdXW4g2q1zQw==
+
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"

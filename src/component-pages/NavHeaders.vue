@@ -1,7 +1,7 @@
 <template>
     <div class="ntwinds__page bg-gray-200 mb-28">
-        <div class="grid grid-cols-1 gap-y-16">
-            <div class="px-6 pt-6">
+        <div class="flex flex-col space-y-16 p-6">
+            <div>
                 <span class="text-md mb-5"> View in compress layout </span>
                 <Switch
                     v-model="navCompress"
@@ -12,7 +12,7 @@
                 </Switch>
             </div>
 
-            <div class="px-6">
+            <div>
                 <div class="text-md mb-5">Simple header (left align)</div>
                 <NavHeader class="border-b-2 border-gray-200 bg-white" :compress="navCompress">
                     <template #logo>
@@ -45,7 +45,7 @@
                 </NavHeader>
             </div>
 
-            <div class="px-6">
+            <div>
                 <div class="text-md mb-5">Simple header (right align)</div>
                 <NavHeader class="border-b-2 border-gray-200 bg-white" :compress="navCompress">
                     <template #logo>
@@ -78,7 +78,7 @@
                 </NavHeader>
             </div>
 
-            <div class="px-6">
+            <div>
                 <div class="text-md mb-5">Header with submenu and icons</div>
                 <NavHeader class="border-b-2 border-gray-200 bg-white" :compress="navCompress">
                     <template #logo>
@@ -127,7 +127,7 @@
                 </NavHeader>
             </div>
 
-            <div class="px-6">
+            <div>
                 <div class="text-md mb-5">Packed header (left, right, icons, and submenu)</div>
                 <NavHeader class="border-b-2 border-gray-200 bg-white" :compress="navCompress">
                     <template #logo>
@@ -229,7 +229,7 @@
                 </NavHeader>
             </div>
 
-            <div class="px-6">
+            <div>
                 <div class="text-md mb-5">Packed header (NOT a dark theme, just dark)</div>
                 <NavHeader class="border-b-2 border-gray-200 bg-gray-800" :compress="navCompress">
                     <template #logo>

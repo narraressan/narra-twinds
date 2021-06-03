@@ -1,7 +1,10 @@
 @import './fonts.scss';
 
 // VARIABLES
-$stream_activities__height: 350px;
+$livestream__height: 350px;
+$sidebar__width: 250px;
+$adbar__width: 200px;
+$streamposts__controls__width: 68px;
 // ------------------------------
 
 .ntwinds {
@@ -11,12 +14,12 @@ $stream_activities__height: 350px;
     
     // LAYOUT
     &__compress_layout {
-        @apply mx-auto;
+        @apply mx-auto px-4;
         max-width: 1100px;
     }
 
     &__wide_layout {
-        @apply mx-auto;
+        @apply mx-auto px-4;
         max-width: 1600px;
     }
 
@@ -26,21 +29,27 @@ $stream_activities__height: 350px;
     }
     // ------------------------------
 
-    // COMPONENTS
+    // COMPONENTS AND PAGES
     &__sidebar {
         @apply flex-none;
-        width: 250px;
+        width: $sidebar__width;
 
         &__container {
             @apply fixed overflow-y-auto;
             width: inherit;
-            height: calc(100vh - 4rem); // h-16 == 4rem from tailwind config
+            height: calc(theme('height.screen') - theme('height.16')); // h-16 height of header navigation
+        }
+
+        &__text {
+            // w-11 width of thumbnail
+            // pr-3 padding between image and text
+            width: calc(theme('width.full') - (theme('width.11') + theme('spacing.3')))
         }
     }
 
     &__adbar {
         @apply flex-none;
-        width: 200px;
+        width: $adbar__width;
     }
 
     &__livestream {
@@ -48,12 +57,12 @@ $stream_activities__height: 350px;
 
         &__player {
             @apply flex-grow bg-black text-white;
-            min-height: $stream_activities__height;
+            min-height: $livestream__height;
         }
         
         &__activities {
             @apply overflow-y-auto;
-            height: calc(100vh - #{$stream_activities__height});
+            height: calc(theme('height.screen') - #{$livestream__height});
 
             @media (min-width: 768px) {
                 @apply flex-none h-full;
@@ -68,6 +77,68 @@ $stream_activities__height: 350px;
                 width: 600px;
             }
         }
+    }
+
+    &__streampost {
+        @apply w-full flex flex-col;
+
+        &__text {
+            // w-14 width of thumbnail
+            // pr-3 padding between image and text
+            width: calc(theme('width.full') - (theme('width.14') + theme('spacing.3')));
+            min-height: theme('height.4');
+        }
+
+        &__controls {
+            @apply flex flex-col justify-end;
+            width: $streamposts__controls__width;
+        }
+
+        &__preview {
+            width: calc(theme('width.full') - #{$streamposts__controls__width});
+            max-width: 520px;
+            height: 250px;
+        }
+    }
+
+    &__videopreview {
+        @apply relative w-full h-full flex justify-center z-0 bg-black rounded-md overflow-hidden shadow-lg;
+        
+        &__backdrop {
+            @apply absolute rounded-md filter-blur;
+            z-index: 0;
+            margin: -15px -5px -5px -5px;
+            width: calc(theme('width.full') + 30px);
+            height: calc(theme('height.full') + 30px);
+        }
+
+        &__image {
+            @apply h-full;
+            z-index: 1;
+        }
+
+        &__top_stats, 
+        &__bottom_stats {
+            @apply absolute w-full flex justify-between p-3;
+            z-index: 2;
+        }
+
+        &__top_stats {
+            @apply top-0;
+        }
+
+        &__bottom_stats {
+            @apply bottom-0;
+        }
+    }
+
+    &__categories_banner {
+        background: linear-gradient(0deg, #fff, rgba(247, 247, 248, 0.25)), 
+                    linear-gradient(90deg, #fff, rgba(247, 247, 248, 0.25)), 
+                    url('https://static-cdn.jtvnw.net/categorydb-production-game-banners/21779/en-us/bd139c1e-d10b-41e0-b8c0-17c12f1c6a96.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     // ------------------------------
 

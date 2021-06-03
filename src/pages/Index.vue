@@ -64,6 +64,10 @@ const componentPages = ref([
         name: 'Typography',
         title: 'Typography',
     },
+    {
+        name: 'Buttons',
+        title: 'Buttons',
+    },
 ]);
 
 const pages = ref([
