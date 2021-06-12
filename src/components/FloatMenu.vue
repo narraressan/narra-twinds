@@ -12,7 +12,7 @@
             leave-to-class="transform opacity-0 scale-95"
         >
             <MenuItems
-                class="absolute mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="z-10 absolute mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                 :class="alignment[position.toUpperCase()]"
             >
                 <MenuItem v-for="link in menu" v-slot="{ active }" :key="link?.name">

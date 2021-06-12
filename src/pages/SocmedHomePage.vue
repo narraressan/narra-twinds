@@ -5,7 +5,7 @@
                 <img class="h-8 w-8" src="../assets/placeholder/lion.svg" alt="logo-here" />
             </template>
             <template #rightExposed>
-                <button class="btn btn-md btn-primary">Login</button>
+                <button class="btn-md btn-primary">Login</button>
                 <FloatMenu :menu="submenu" position="right">
                     <DotsVerticalIcon class="h-6 w-6 inline-flex" aria-hidden="true" />
                 </FloatMenu>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="flex-grow py-5 w-full">
                     <div class="grid grid-cols-1 gap-10">
-                        <StreamPost v-for="idx of 15" :key="idx" />
+                        <StreamPost v-for="idx of 15" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`" />
                     </div>
                 </div>
                 <div class="ntwinds__adbar hidden lg:block">

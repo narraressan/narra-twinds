@@ -1,23 +1,18 @@
 <template>
-    <div class="ntwinds__sidebar__container flex flex-col space-y-7 py-5">
-        <div class="flex flex-col space-y-3">
-            <div class="flex items-center">
+    <div class="ntwinds__sidebar__container flex flex-col space-y-6 py-5">
+        <div class="flex flex-col">
+            <div class="flex items-center p-2 cursor-pointer text-xxl font-semibold" :class="{ 'font-bold bg-gray-100 rounded': isLiveNowActive }">
                 <DesktopComputerIcon class="w-7 h-7 mr-2" />
-                <router-link :to="{ name: 'home' }" class="text-xxl font-semibold">LIVE NOW</router-link>
+                <router-link :to="{ name: 'home' }" class="flex-grow">LIVE NOW</router-link>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center p-2 cursor-pointer text-xxl font-semibold" :class="{ 'font-bold bg-gray-100 rounded': isStreamLobbyActive }">
                 <CubeIcon class="w-7 h-7 mr-2" />
-                <router-link :to="{ name: 'home' }" class="text-xxl font-semibold">STREAM LOBBY</router-link>
+                <router-link :to="{ name: 'home' }" class="flex-grow">STREAM LOBBY</router-link>
             </div>
         </div>
         <div class="flex flex-col space-y-2">
             <div class="text-sm font-semibold">Recommended</div>
-            <MiniUserCard v-for="idx of 8" :key="idx">
-                <template #thumbnail>
-                    <div class="h-11 w-11 rounded-full bg-black">
-                        <img class="h-11 w-11 rounded-full" :src="`https://placeimg.com/640/480/any?_${Math.random()}`" alt="profile-pic" />
-                    </div>
-                </template>
+            <MiniUserCard v-for="idx of 8" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`">
                 <template #title>
                     {{ Dummy.text() }}
                 </template>
@@ -37,10 +32,7 @@
                     leave-to-class="transform scale-95 opacity-0"
                 >
                     <DisclosurePanel>
-                        <MiniUserCard v-for="idx of 8" :key="idx">
-                            <template #thumbnail>
-                                <img class="h-11 w-11 rounded-full" :src="`https://placeimg.com/640/480/any?_${Math.random()}`" alt="profile-pic" />
-                            </template>
+                        <MiniUserCard v-for="idx of 8" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`">
                             <template #title>
                                 {{ Dummy.text() }}
                             </template>
@@ -68,12 +60,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, defineProps, ref, toRefs } from 'vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { ChevronDownIcon, DesktopComputerIcon, CubeIcon } from '@heroicons/vue/solid';
 import Dummy from 'dummyjs';
 
 import MiniUserCard from './MiniUserCard.vue';
+
+const props = defineProps({
+    isLiveNowActive: {
+        type: Boolean,
+        default: false,
+    },
+    isStreamLobbyActive: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const { isLiveNowActive, isStreamLobbyActive } = toRefs(props);
 
 const open = ref(false);
 </script>

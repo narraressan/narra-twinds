@@ -15,10 +15,10 @@
         <div class="ntwinds__wide_layout">
             <div class="flex lg:space-x-5">
                 <div class="ntwinds__sidebar hidden lg:block">
-                    <Sidebar />
+                    <Sidebar :is-stream-lobby-active="true" />
                 </div>
-                <div class="flex-grow">
-                    <div class="flex flex-col space-y-3 pb-5">
+                <div class="flex-grow mb-14">
+                    <div class="flex flex-col space-y-3">
                         <div class="h-60 flex items-center p-5 ntwinds__categories_banner">
                             <div class="flex flex-col">
                                 <div class="text-xxxl font-semibold">Stream with us now</div>

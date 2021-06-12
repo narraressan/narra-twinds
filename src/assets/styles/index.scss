@@ -1,10 +1,11 @@
 @import './fonts.scss';
 
-// VARIABLES
-$livestream__height: 350px;
-$sidebar__width: 250px;
-$adbar__width: 200px;
-$streamposts__controls__width: 68px;
+// VARIABLES (use when values are reused
+$livestream__height_sm: 350px;
+$livestream__details__height_sm: 65px;
+$livestream__details__height: 250px;
+$livestream__write_comments__height_sm: 80px;
+$livestream__write_comments__height: 80px;
 // ------------------------------
 
 .ntwinds {
@@ -16,6 +17,11 @@ $streamposts__controls__width: 68px;
     &__compress_layout {
         @apply mx-auto px-4;
         max-width: 1100px;
+    }
+
+    &__left_layout {
+        @apply px-4;
+        max-width: 950px;
     }
 
     &__wide_layout {
@@ -31,38 +37,32 @@ $streamposts__controls__width: 68px;
 
     // COMPONENTS AND PAGES
     &__sidebar {
-        @apply flex-none;
-        width: $sidebar__width;
+        @apply flex-none bg-white;
+        width: 250px;
 
         &__container {
             @apply fixed overflow-y-auto;
             width: inherit;
             height: calc(theme('height.screen') - theme('height.16')); // h-16 height of header navigation
         }
-
-        &__text {
-            // w-11 width of thumbnail
-            // pr-3 padding between image and text
-            width: calc(theme('width.full') - (theme('width.11') + theme('spacing.3')))
-        }
     }
 
     &__adbar {
-        @apply flex-none;
-        width: $adbar__width;
+        @apply flex-none bg-white;
+        width: 200px;
     }
 
     &__livestream {
         @apply flex flex-col md:flex-row h-full;
 
         &__player {
-            @apply flex-grow bg-black text-white;
-            min-height: $livestream__height;
+            @apply flex-grow bg-black text-white flex items-center;
+            min-height: $livestream__height_sm;
         }
         
         &__activities {
-            @apply overflow-y-auto;
-            height: calc(theme('height.screen') - #{$livestream__height});
+            @apply relative;
+            height: calc(theme('height.screen') - #{$livestream__height_sm});
 
             @media (min-width: 768px) {
                 @apply flex-none h-full;
@@ -77,25 +77,58 @@ $streamposts__controls__width: 68px;
                 width: 600px;
             }
         }
+
+        &__details,
+        &__comments,
+        &__write_comment,
+        &__settings {
+            @apply w-full p-2 md:py-3 md:px-6;
+        }
+
+        &__details {
+            @apply border-b-2 border-gray-100;
+            height: $livestream__details__height_sm;
+
+            @media (min-width: 768px) {
+                height: $livestream__details__height;
+            }
+        }
+
+        &__comments {
+            @apply overflow-y-auto flex flex-col space-y-4 pt-5 pb-16;
+            top: $livestream__details__height_sm;
+            height: calc(theme('height.full') - #{$livestream__details__height_sm} - #{$livestream__write_comments__height_sm});
+
+            @media (min-width: 768px) {
+                top: $livestream__details__height;
+                height: calc(theme('height.full') - #{$livestream__details__height} - #{$livestream__write_comments__height});
+            }
+        }
+
+        &__write_comment {
+            @apply border-t-2 border-gray-100 flex;
+            height: $livestream__write_comments__height_sm;
+
+            @media (min-width: 768px) {
+                height: $livestream__write_comments__height;
+            }
+        }
+
+        &__settings {
+            @apply flex flex-col h-full w-full overflow-hidden overflow-y-auto space-y-5 pb-16;
+        }
     }
 
     &__streampost {
         @apply w-full flex flex-col;
 
-        &__text {
-            // w-14 width of thumbnail
-            // pr-3 padding between image and text
-            width: calc(theme('width.full') - (theme('width.14') + theme('spacing.3')));
-            min-height: theme('height.4');
-        }
-
         &__controls {
             @apply flex flex-col justify-end;
-            width: $streamposts__controls__width;
+            width: 68px;
         }
 
         &__preview {
-            width: calc(theme('width.full') - #{$streamposts__controls__width});
+            @apply flex flex-grow;
             max-width: 520px;
             height: 250px;
         }
@@ -103,19 +136,6 @@ $streamposts__controls__width: 68px;
 
     &__videopreview {
         @apply relative w-full h-full flex justify-center z-0 bg-black rounded-md overflow-hidden shadow-lg;
-        
-        &__backdrop {
-            @apply absolute rounded-md filter-blur;
-            z-index: 0;
-            margin: -15px -5px -5px -5px;
-            width: calc(theme('width.full') + 30px);
-            height: calc(theme('height.full') + 30px);
-        }
-
-        &__image {
-            @apply h-full;
-            z-index: 1;
-        }
 
         &__top_stats, 
         &__bottom_stats {
@@ -132,6 +152,16 @@ $streamposts__controls__width: 68px;
         }
     }
 
+    &__mini_videopreview {
+        @apply relative w-full h-full flex justify-center z-0 bg-black rounded-md overflow-hidden shadow-lg;
+        height: 150px;
+
+        &__bottom_stats {
+            @apply absolute w-full flex justify-between p-3 bottom-0;
+            z-index: 2;
+        }
+    }
+
     &__categories_banner {
         background: linear-gradient(0deg, #fff, rgba(247, 247, 248, 0.25)), 
                     linear-gradient(90deg, #fff, rgba(247, 247, 248, 0.25)), 
@@ -140,9 +170,83 @@ $streamposts__controls__width: 68px;
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    &__bannervideo {
+        @apply relative flex justify-center z-0 bg-black overflow-hidden shadow-sm;
+        height: 500px;
+
+        &__container {
+            @apply flex justify-center items-center space-x-6 overflow-hidden;
+            z-index: 1;
+        }
+
+        &__preview_panel {
+            @apply flex;
+            width: 800px;
+            height: 460px;
+        }
+
+        &__preview_live {
+            @apply bg-black flex-grow;
+        }
+
+        &__preview_info {
+            @apply bg-white flex flex-col p-5;
+            width: 250px;
+        }
+    }
+
+    &__generic_form {
+        @apply w-full;
+        max-width: theme('width.full');
+
+        @media (min-width: 768px) {
+            width: 430px;
+        }
+    }
+
+    &__public_page {
+        @apply bg-cover bg-center h-screen;
+        background-color: #27313B;
+    }
     // ------------------------------
 
     // UTILITIES
+    &__avatar_placeholder {
+        @apply rounded-full bg-black mr-3 flex-none;
+
+        > img {
+            @apply w-full h-full rounded-full;
+        }
+    }
+
+    &__videoplayer {
+        @apply relative overflow-hidden w-full bg-transparent;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+        > iframe {
+            @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full;
+            max-height: $livestream__height_sm;
+
+            @media (min-width: 768px) {
+                max-height: theme('height.full');
+            }
+        }
+    }
+
+    &__backdrop {
+        @apply absolute rounded-md filter-blur bg-cover bg-center;
+        z-index: 0;
+        margin: -15px -5px -5px -5px;
+        width: calc(theme('width.full') + 30px);
+        height: calc(theme('height.full') + 30px);
+
+        &__image {
+            @apply h-full;
+            z-index: 1;
+        }
+    }
+
     &__transition {
         /* Enter and leave animations can use different */
         /* durations and timing functions.              */

@@ -1,7 +1,7 @@
 <template>
     <div class="ntwinds__videopreview">
-        <img class="ntwinds__videopreview__image" :src="previewImage" alt="profile-pic" />
-        <div class="ntwinds__videopreview__backdrop bg-cover bg-center" :style="`background-image: url(${previewImage})`"></div>
+        <img class="ntwinds__backdrop__image" :src="previewImage" alt="profile-pic" />
+        <div class="ntwinds__backdrop" :style="`background-image: url(${previewImage})`"></div>
         <div class="ntwinds__videopreview__top_stats text-white">
             <div v-if="isLive" class="flex space-x-2">
                 <span class="px-2 py-0.5 text-xs bg-red-600 rounded font-semibold cursor-pointer inline-flex items-center">LIVE</span>
@@ -12,9 +12,9 @@
         </div>
         <div class="ntwinds__videopreview__bottom_stats text-white text-sm">
             <div class="flex">
-                <span class="px-2 py-1 text-xs bg-gray-600 rounded space-x-1">
+                <span class="px-1.5 py-0.5 text-xs bg-gray-600 rounded space-x-1">
                     <span class="font-semibold">{{ views }}</span>
-                    <span>views</span>
+                    <span class="text-xxs">viewers</span>
                 </span>
             </div>
             <div class="flex space-x-2">
@@ -29,7 +29,6 @@
 
 <script setup>
 import { defineProps, toRefs } from 'vue';
-import { EyeIcon } from '@heroicons/vue/outline';
 
 const props = defineProps({
     isLive: {
