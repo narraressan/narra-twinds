@@ -18,6 +18,14 @@
                 <div class="w-1/4 text-sm mb-1 font-medium">Introduction</div>
                 <textarea rows="3" class="inpt p-3 w-3/4 resize-none"></textarea>
             </div>
+            <div class="flex space-x-2">
+                <div class="w-1/4 text-sm mb-1 font-medium">Social Media Accounts</div>
+                <div class="w-3/4 space-y-4">
+                    <input type="text" class="inpt-md w-full" />
+                    <input type="text" class="inpt-md w-full" />
+                    <input type="text" class="inpt-md w-full" />
+                </div>
+            </div>
             <div class="flex justify-end">
                 <button class="btn-md btn-primary">Save</button>
             </div>
