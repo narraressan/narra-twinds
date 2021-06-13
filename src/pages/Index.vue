@@ -163,27 +163,27 @@ const pages = ref([
     {
         name: 'PrivateProfile',
         title: 'Private Profile',
-        status: status.OPEN,
+        status: status.DONE,
     },
     {
         name: 'PublicProfile',
         title: 'Public Profile',
-        status: status.OPEN,
+        status: status.DONE,
     },
     {
         name: 'SearchResults',
         title: 'Search Results',
-        status: status.OPEN,
+        status: status.DONE,
     },
     {
         name: 'Notifications',
         title: 'Notifications',
-        status: status.OPEN,
+        status: status.DONE,
     },
     {
         name: 'AccountSettings',
         title: 'Account Settings',
-        status: status.OPEN,
+        status: status.DONE,
     },
     {
         name: 'PrivacyPolicy',

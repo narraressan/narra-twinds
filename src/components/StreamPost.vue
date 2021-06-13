@@ -5,9 +5,17 @@
                 <img :src="avatar" alt="profile-pic" />
             </template>
             <template #details>
-                <p class="font-semibold truncate cursor-pointer">
-                    {{ Dummy.text() }}
-                </p>
+                <StreamingPostTitle>
+                    <template #username>
+                        {{ Dummy.text(1, 6) }}
+                    </template>
+                    <template #title>
+                        {{ Dummy.text(6, 20) }}
+                    </template>
+                    <template #timestamp>
+                        <span>Started 1.5 hrs ago</span>
+                    </template>
+                </StreamingPostTitle>
                 <p v-snip:js="3" class="text-sm">
                     {{ Dummy.text(13, 150) }}
                 </p>
@@ -49,6 +57,7 @@ import Dummy from 'dummyjs';
 
 import VideoPreview from './VideoPreview.vue';
 import AvatarWithSideText from './base/AvatarWithSideText.vue';
+import StreamingPostTitle from './base/StreamingPostTitle.vue';
 
 const props = defineProps({
     avatar: {

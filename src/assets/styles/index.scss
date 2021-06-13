@@ -209,6 +209,13 @@ $livestream__write_comments__height: 80px;
         @apply bg-cover bg-center h-screen;
         background-color: #27313B;
     }
+
+    &__profile {
+        &__banner {
+            @apply w-full bg-cover bg-center;
+            height: 250px;
+        }
+    }
     // ------------------------------
 
     // UTILITIES

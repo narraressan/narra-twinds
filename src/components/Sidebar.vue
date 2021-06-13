@@ -14,7 +14,9 @@
             <div class="text-sm font-semibold">Recommended</div>
             <MiniUserCard v-for="idx of 8" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`">
                 <template #title>
-                    {{ Dummy.text() }}
+                    <div class="w-full truncate pr-8">
+                        {{ Dummy.text() }}
+                    </div>
                 </template>
                 <template #details>
                     <div class="font-semibold mr-1">1.5B</div>
@@ -34,7 +36,9 @@
                     <DisclosurePanel>
                         <MiniUserCard v-for="idx of 8" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`">
                             <template #title>
-                                {{ Dummy.text() }}
+                                <div class="w-full truncate pr-8">
+                                    {{ Dummy.text() }}
+                                </div>
                             </template>
                             <template #details>
                                 <div class="font-semibold mr-1">1.5B</div>

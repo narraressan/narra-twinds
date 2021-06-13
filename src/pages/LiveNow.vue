@@ -44,7 +44,7 @@
                         </div>
                         <div class="flex justify-between items-center mb-8 mt-5">
                             <div class="font-semibold">Recommended CATEGORY_NAME videos</div>
-                            <input type="text" class="w-1/3 py-3 px-6 bg-gray-100 rounded-full focus:outline-none text-sm" placeholder="Search video" />
+                            <input type="text" class="inpt-lg w-1/3 bg-gray-50 rounded-full" placeholder="Search video" />
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-x-3 gap-y-8">
                             <MiniVideoPreview

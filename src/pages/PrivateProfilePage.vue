@@ -30,11 +30,9 @@
                 <div class="ntwinds__sidebar hidden lg:block">
                     <Sidebar />
                 </div>
-                <div class="flex-grow py-5">
-                    <div class="grid grid-cols-1 gap-10">
-                        <ProfileSettings />
-                        <SecuritySettings />
-                        <PrivacySettings />
+                <div class="flex-grow pb-5">
+                    <div class="grid grid-cols-1">
+                        <PrivateProfile />
                     </div>
                 </div>
                 <div class="ntwinds__adbar hidden lg:block">
@@ -53,9 +51,7 @@ import NavHeader from '../components/NavHeader.vue';
 import FloatMenu from '../components/FloatMenu.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Adbar from '../components/Adbar.vue';
-import PrivacySettings from '../components/PrivacySettings.vue';
-import SecuritySettings from '../components/SecuritySettings.vue';
-import ProfileSettings from '../components/ProfileSettings.vue';
+import PrivateProfile from '../components/PrivateProfile.vue';
 
 const submenu = [
     { name: 'Profile', route: 'home' },

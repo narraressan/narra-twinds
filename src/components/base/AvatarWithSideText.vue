@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white flex w-full">
-        <div class="ntwinds__avatar_placeholder cursor-pointer" :class="avatarSize">
+        <div v-if="avatarSize" class="ntwinds__avatar_placeholder cursor-pointer" :class="avatarSize">
             <slot name="thumbnail" />
         </div>
         <div class="flex-grow">
