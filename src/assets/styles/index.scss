@@ -275,6 +275,9 @@ $livestream__write_comments__height: 80px;
             max-height: 0;
         }
     }
+
+    &__toast_container {
+    }
     // ------------------------------
 }
 
@@ -283,4 +286,13 @@ $livestream__write_comments__height: 80px;
     @apply bg-gray-100 p-5;
     width: 100%;
     min-height: 32px;
+}
+
+.c-toast-container {
+    @apply flex items-center rounded;
+    min-height: 50px;
+}
+
+.c-toast {
+    @apply text-sm w-60;
 }
