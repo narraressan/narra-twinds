@@ -17,9 +17,9 @@
                 <div class="ntwinds__sidebar hidden lg:block">
                     <Sidebar />
                 </div>
-                <div class="flex-grow py-5">
-                    <div class="grid grid-cols-1 gap-10">
-                        <StreamPost v-for="idx of 15" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`" />
+                <div class="flex-grow pb-5">
+                    <div class="grid grid-cols-1">
+                        <PublicProfile />
                     </div>
                 </div>
                 <div class="ntwinds__adbar hidden lg:block">
@@ -38,7 +38,7 @@ import NavHeader from '../components/NavHeader.vue';
 import FloatMenu from '../components/FloatMenu.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Adbar from '../components/Adbar.vue';
-import StreamPost from '../components/StreamPost.vue';
+import PublicProfile from '../components/PublicProfile.vue';
 
 const submenu = [
     { name: 'Register', route: 'home' },

@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.4.0",
-    "@headlessui/vue": "^1.2.0",
+    "@headlessui/vue": "^1.2.0-ece9e87",
     "@heroicons/vue": "^1.0.1",
+    "@meforma/vue-toaster": "^1.2.2",
     "animate.css": "^4.1.1",
+    "dummyjs": "^1.1.7",
     "vue": "^3.0.5",
     "vue-router": "4",
     "vue-snip": "^1.2.0"

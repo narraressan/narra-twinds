@@ -19,7 +19,16 @@
                 </div>
                 <div class="flex-grow py-5">
                     <div class="grid grid-cols-1 gap-10">
-                        <StreamPost v-for="idx of 15" :key="idx" :avatar="`https://placeimg.com/640/480/any?_${Math.random()}`" />
+                        <div class="w-full space-y-2">
+                            <input type="text" class="inpt-lg w-full bg-gray-50 rounded-full" placeholder="Search for streamer, posts, videos, etc..." />
+                            <div class="flex justify-between text-sm p-2 text-gray-600">
+                                <div>Found: <span class="font-semibold">24</span> results</div>
+                                <div>10 of 24</div>
+                            </div>
+                        </div>
+                        <div class="w-full space-y-4">
+                            <GenericSearchResult v-for="idx of 25" :key="idx" />
+                        </div>
                     </div>
                 </div>
                 <div class="ntwinds__adbar hidden lg:block">
@@ -38,7 +47,7 @@ import NavHeader from '../components/NavHeader.vue';
 import FloatMenu from '../components/FloatMenu.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Adbar from '../components/Adbar.vue';
-import StreamPost from '../components/StreamPost.vue';
+import GenericSearchResult from '../components/GenericSearchResult.vue';
 
 const submenu = [
     { name: 'Register', route: 'home' },

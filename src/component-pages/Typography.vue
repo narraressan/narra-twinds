@@ -1,48 +1,58 @@
 <template>
     <div class="ntwinds__page bg-gray-200 mb-28">
-        <div class="grid grid-cols-1 space-y-6 py-10">
-            <div class="px-10">
+        <div class="flex flex-col space-y-6 p-10">
+            <div>
+                <div>(text-xxs)</div>
+                <div class="text-xxs">
+                    {{ Dummy.text(20, 50) }}
+                </div>
+            </div>
+            <div>
                 <div>(text-xs)</div>
                 <div class="text-xs">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
-            <div class="px-10">
+            <div>
                 <div>(text-sm)</div>
                 <div class="text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
-            <div class="px-10">
-                <div>(text-base)</div>
+            <div>
+                <div>(text-base or text-medium)</div>
                 <div class="text-base">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
-            <div class="px-10">
+            <div>
                 <div>(text-lg)</div>
                 <div class="text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
-            <div class="px-10">
+            <div>
                 <div>(text-xl)</div>
                 <div class="text-xl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
-            <div class="px-10">
+            <div>
                 <div>(text-xxl)</div>
                 <div class="text-xxl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem optio ducimus voluptas impedit aliquam ex, temporibus deleniti dolores magni
-                    itaque aut nulla ullam, fugit, architecto quasi. Ducimus, accusamus praesentium? Qui.
+                    {{ Dummy.text(20, 50) }}
+                </div>
+            </div>
+            <div>
+                <div>(text-xxxl)</div>
+                <div class="text-xxxl">
+                    {{ Dummy.text(20, 50) }}
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script setup>
+import Dummy from 'dummyjs';
+</script>
