@@ -206,8 +206,9 @@ $livestream__write_comments__height: 80px;
     }
 
     &__public_page {
-        @apply bg-cover bg-center h-screen;
+        @apply bg-cover bg-center;
         background-color: #27313B;
+        min-height: theme('height.screen');
     }
 
     &__profile {
@@ -294,5 +295,5 @@ $livestream__write_comments__height: 80px;
 }
 
 .c-toast {
-    @apply text-sm w-60;
+    @apply text-sm;
 }

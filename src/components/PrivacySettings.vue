@@ -68,11 +68,11 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { Switch } from '@headlessui/vue';
-import { nextTick } from '@vue/runtime-core';
 
-setAccountToPrivate = false;
-makeFollowersPrivate = false;
-makeFollowingsPrivate = false;
-deactivateAccount = false;
+const setAccountToPrivate = ref(false);
+const makeFollowersPrivate = ref(false);
+const makeFollowingsPrivate = ref(false);
+const deactivateAccount = ref(false);
 </script>

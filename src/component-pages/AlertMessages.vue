@@ -131,7 +131,7 @@ import Dummy from 'dummyjs';
 
 const { ctx } = getCurrentInstance();
 
-isOpen = false;
+var isOpen = ref(false);
 
 const closeModal = () => {
     isOpen.value = false;
